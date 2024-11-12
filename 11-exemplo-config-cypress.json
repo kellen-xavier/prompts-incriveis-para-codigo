@@ -1,0 +1,29 @@
+{
+  "name": "prospera-ui-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cy:open:dev": "cypress open --env configFile=dev",
+    "cy:run:dev": "cypress run --env configFile=dev",
+    "cy:open:homolog": "cypress open --env configFile=homolog",
+    "cy:run:homolog": "cypress run --env configFile=homolog",
+    "open-report": "allure open allure-report",
+    "prereport": "npm run delete:reports",
+    "generate-report:homolog": "allure generate allure-report --clean -o allure-report",
+    "test-and-report:homolog": "npm run cy:run:homolog && npm run generate-report:homolog",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:cypress": "npx eslint 'cypress/**/*.{js,jsx,ts,tsx}'",
+    "cy:run:homolog-pipeline": "cypress run --env USERNAME=$USERNAME,PASSWORD=$PASSWORD"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.2",
+    "cypress": "^13.13.3",
+    "eslint": "^9.9.1",
+    "eslint-plugin-cypress": "^3.5.0"
+  }
+}
